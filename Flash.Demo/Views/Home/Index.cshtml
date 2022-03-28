@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Flash.Demo.Models.Location>
+
+@{
+    ViewData["Title"] = "Flash Demo";
+}
+
+<h1>Select Your Location</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					<a class="navbar-brand" asp-area="" asp-controller="Lot" asp-action="Index" asp-route-id="@item.Id">Select</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

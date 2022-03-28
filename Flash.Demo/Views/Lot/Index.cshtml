@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Flash.Demo.Models.Lot>
+
+@{
+	ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Name)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.SpaceCount)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.VehicleCount)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Name)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.SpaceCount)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.VehicleCount)
+				</td>
+				<td>
+					@if (item.VehicleCount < item.SpaceCount)
+					{
+						<a class="navbar-brand" asp-area="" asp-controller="Lot" asp-action="CheckIn" asp-route-id="@item.Id">Check In</a>
+					}
+					@if (item.VehicleCount > 0)
+					{
+						<a class="navbar-brand" asp-area="" asp-controller="Lot" asp-action="CheckOut" asp-route-id="@item.Id">Check Out</a>
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
