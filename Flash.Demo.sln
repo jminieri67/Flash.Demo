@@ -8,10 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flash.Demo", "Flash.Demo\Flash.Demo.csproj", "{000545AE-1CC1-4B8C-8573-6342A537C726}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database Files", "Database Files", "{7FC62A43-A092-4B8D-91C6-237AF5E6C1E4}"
-	ProjectSection(SolutionItems) = preProject
-		Database Files\Flash.mdf = Database Files\Flash.mdf
-		Database Files\Flash_log.ldf = Database Files\Flash_log.ldf
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
